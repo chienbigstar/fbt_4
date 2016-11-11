@@ -7,4 +7,7 @@ Rails.application.routes.draw do
     resources :categories
   end
   resources :tours, only: :show
+  resources :bookings, only: [:new, :create]
+  get "payment/new", to: "payment#new"
+  get "payment/update", to: "payment#update"
 end

@@ -79,3 +79,5 @@ en:
     payment: Payment
     must_sign_in: You must signin
     booking_tour: Booking tour
+    booking_tour: Booking tour
+    cannot_patment_now: Cannot payment now!
