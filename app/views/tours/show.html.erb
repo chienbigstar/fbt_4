@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div>
-    <%= link_to t("tours.payment"), new_payment_path(id: @tour.id), remote: true %>
+  <div id="booking">
+    <%= link_to t("tours.booking_tour"), new_booking_path(id: @tour.id), remote: true %>
   </div>
 </section>

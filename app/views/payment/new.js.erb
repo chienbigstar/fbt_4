@@ -1,9 +1,14 @@
 <% if user_signed_in? %>
-  <%= unless @book.blank? %>
-    url = '<%= Settings.bank_url %>';
-    price = '<%= @book.totalmoney %>';
-    PopupCenter(Settings.bank_url+'?price=' +@tour.price +'token=' +$token, 'banking', 500, 300);
+
+  <% if @status_payment %>
+    url = '<%= Settings.payment_bank_url %>';
+    token = '<%= @public_token %>';
+    window.open(url+'?token=' +token, "_blank",
+      "toolbar=yes,scrollbars=yes,resizable=no,top=300,left=500,width=400,height=400");
+  <% else %>
+    alert("<%= t "tours.cannot_patment_now" %>");
   <% end %>
+
 <% else %>
   alert("<%= t "tours.must_sign_in" %>");
 <% end %>

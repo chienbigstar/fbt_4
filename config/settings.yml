@@ -1,2 +1,3 @@
-bank_url: <%= ENV["BANK_URL"] %>
-bank_token: <%= ENV["BANK_TOKEN"] %>
+payment_bank_url: http://localhost:3333/payments/new
+bank_token: QUF--YFDngbizbQzR7VvKA
+order_bank_url: http://localhost:3333/orders/new
