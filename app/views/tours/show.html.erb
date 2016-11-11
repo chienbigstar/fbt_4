@@ -1,0 +1,32 @@
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3><%= @tour.name %></h3>
+        <p>
+          <%= @tour.description %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <h4><%= t "tours.schedule" %></h4>
+        <dl>
+          <%= @tour.schedule %>
+        </dl>
+      </div>
+      <div class="col-lg-6">
+        <h4><%= t "tours.info" %></h4>
+        <dl class="dl-horizontal" >
+          <dt><%= t "tours.durations" %></dt>
+          <dd><%= @tour.time_tour %></dd>
+          <dt><%= t "tours.price" %></dt>
+          <dd><%= @tour.price %></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= link_to t("tours.payment"), new_payment_path(id: @tour.id), remote: true %>
+  </div>
+</section>

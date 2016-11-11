@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <%= unless @book.blank? %>
+    url = '<%= Settings.bank_url %>';
+    price = '<%= @book.totalmoney %>';
+    PopupCenter(Settings.bank_url+'?price=' +@tour.price +'token=' +$token, 'banking', 500, 300);
+  <% end %>
+<% else %>
+  alert("<%= t "tours.must_sign_in" %>");
+<% end %>
