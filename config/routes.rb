@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :show, :update]
     resources :reviews, only: [:index, :show, :destroy]
     resources :tours
+    resources :tour_rules, except: :show
   end
   resources :tours, only: [:index, :show] do
     resources :reviews

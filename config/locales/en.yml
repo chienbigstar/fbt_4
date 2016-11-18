@@ -278,3 +278,24 @@ en:
     google: "Google+"
     or: "Or"
     facebook: "Facebook"
+  tour_rule:
+    name: Name
+    amount: Amount
+    type_cal: Type Cal
+    start_day: Start day
+    end_day: End day
+    created_at: Created at
+    conditions: Conditions( if all the following are true )
+    created_time: Created time
+    action: Action
+    edit: Edit
+    del: Delete
+    add_new: Add new
+    edit_rule: Edit rule
+    submit: Submit
+    sure: Are you sure?
+    range_day: End day must > start day
+    value_conditions: Not have value conditions
+    create_scucess: Created success rule
+    update_success: Updated success rule
+    destroy_success: Delete success rule

@@ -1,0 +1,12 @@
+<div class="container" >
+  <div class="panel panel-default" >
+    <div class="panel-heading" >
+      <%= t "admin.tour_rule.edit_rule" %>
+    </div>
+    <div class="panel_body" >
+      <%= render "admin/tour_rules/form" %>
+      <%= link_to :load, edit_admin_tour_rule_path, remote: true,
+        hidden: true, class: :autoajax %>
+    </div>
+  </div>
+</div>

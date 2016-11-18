@@ -1,0 +1,16 @@
+<% tour_rule.conditions.collect do |c| %>
+  <div class="form-group">
+    <%= rule_hidden_field name_for_rule_id(c.id), c.id %>
+    <%= rule_select_field name_for_type(c.id),
+      support.conditions, c[:typed] %>
+
+    <% if c[:typed] == "price_less" || c[:typed] == "price_more" %>
+      <%= rule_number_field name_for_value(c.id), c[:valued] %>
+    <% elsif c[:typed] == "place" %>
+      <%= rule_select_field name_for_value(c.id),
+        support.places, c[:valued] %>
+    <% end %>
+    <i class="bt-remove pt glyphicon glyphicon-remove" ></i>
+    <%= rule_hidden_field name_for_destroy(c.id), false %>
+  </div>
+<% end %>

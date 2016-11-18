@@ -1,0 +1,39 @@
+<%= form_for [:admin, @tour_rule] do |f| %>
+  <%= render "shared/error_message", object: @tour_rule %>
+  <div class="col-md-6" >
+    <div class="form-group">
+      <label for="name" ><%= t "tour_rule.name" %></label>
+      <%= f.text_field :name %>
+    </div>
+    <div class="form-group">
+      <label for="amount" ><%= t "tour_rule.amount" %></label>
+      <%= f.number_field :amount %>
+    </div>
+    <div class="form-group">
+      <label for="type_cal" ><%= t "tour_rule.type_cal" %></label>
+      <%= f.select :type_cal, TourRule.type_cals.collect{|key, value| [key, key]} %>
+    </div>
+    <div class="form-group">
+      <label for="start_day" ><%= t "tour_rule.start_day" %></label>
+      <%= f.text_field :start_day, class: :time_picker %>
+    </div>
+    <div class="form-group">
+      <label for="end_day" ><%= t "tour_rule.end_day" %></label>
+      <%= f.text_field :end_day, class: :time_picker %>
+    </div>
+    <div class="form-group">
+      <%= f.submit t("tour_rule.submit") %>
+    </div>
+  </div>
+  <div class="col-md-6" >
+    <label><%= t "tour_rule.conditions" %></label>
+    <div id="conditions" >
+      <%= render "admin/tour_rules/exist_conditions", tour_rule: @tour_rule,
+        support: @support if @tour_rule.id.present? %>
+    </div>
+    <div class="loader"></div>
+    <div id="bt_add_condition" >
+      <i class="pt glyphicon glyphicon-plus" ></i>
+    </div>
+  </div>
+<% end %>

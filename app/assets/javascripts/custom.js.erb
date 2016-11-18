@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+  $(".autoajax").trigger("click");
   $('input[class="daterange"]').daterangepicker();
 
   $(function() {
@@ -23,5 +24,23 @@ $(document).on('turbolinks:load', function() {
       $(this).val('');
     });
 
+  });
+
+  $(function() {
+    $('.time_picker').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker24Hour: true,
+        autoUpdateInput: false,
+        timePicker: true,
+        timePickerIncrement: 30,
+        locale: {
+          cancelLabel: 'Clear',
+          format: 'YYYY-MM-DD HH:mm:ss'
+        }
+      });
+    $('.time_picker').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.endDate.format('YYYY-MM-DD HH:mm:ss'));
+    });
   });
 });

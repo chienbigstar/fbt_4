@@ -1,0 +1,39 @@
+<div class="container" >
+  <div class="panel panel-default" >
+    <div class="panel-heading" >
+      <%= link_to t("tour_rule.add_new"), new_admin_tour_rule_path %>
+    </div>
+    <div class="panel-body" >
+      <table class="table" >
+        <thead>
+          <tr>
+            <th><%= t "tour_rule.name" %></th>
+            <th><%= t "tour_rule.type_cal" %></th>
+            <th><%= t "tour_rule.amount" %></th>
+            <th><%= t "tour_rule.start_day" %></th>
+            <th><%= t "tour_rule.end_day" %></th>
+            <th><%= t "tour_rule.created_time" %></th>
+            <th><%= t "tour_rule.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tour_rules.each do |t| %>
+            <tr>
+              <td><%= t.name %></td>
+              <td><%= t.type_cal %></td>
+              <td><%= t.amount %></td>
+              <td><%= t.start_day %></td>
+              <td><%= t.end_day %></td>
+              <td><%= t.created_at %></td>
+              <td>
+                <%= link_to t("tour_rule.edit"), edit_admin_tour_rule_path(t) %>
+                <%= link_to t("tour_rule.del"), admin_tour_rule_path(t),
+                  method: :delete, data: {confirm: t("tour_rule.sure")} %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

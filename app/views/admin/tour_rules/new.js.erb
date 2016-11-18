@@ -1,0 +1,47 @@
+$condition_input = '<%= j rule_select_field name_for_type,
+  @support.conditions %>';
+$number_input = '<%= j rule_number_field(name_for_value) %>';
+$place_select_field = '<%= j rule_select_field(name_for_value,
+  @support.places) %>';
+$remove_button = '<i class="bt-remove pt glyphicon glyphicon-remove" ></i>';
+$destroy_input = '<%= rule_hidden_field name_for_destroy, false, :destroy %>';
+
+function replace_time(content, time){
+  return content.split("$time").join(time);
+}
+
+function action_for_destroy(){
+  $('.bt-remove').click(function(){
+    $destroy = $(this).next();
+      $($destroy).attr('value', 1);
+      $(this).parent().fadeOut();
+  });
+}
+
+function type_select_action () {
+  $('.rule_select').on('change', function(){
+    $value = $(this).val();
+    $time = $(this).attr('time');
+    if($value == 'price_less' || $value == 'price_more'){
+      $(this).next().replaceWith(replace_time($number_field, $time));
+    }
+    else if($value == 'place'){
+      $(this).next().replaceWith(replace_time($place_select_field, $time));
+    }
+  });
+}
+
+$("#bt_add_condition").click(function(){
+  $time = Date.now();
+  $condition_field = replace_time($condition_input, $time);
+  $number_field = replace_time($number_input, $time);
+  $destroy_field = replace_time($destroy_input, $time);
+  $('#conditions').append('<div class="form-group" >' +$condition_field +$number_field +
+    $remove_button + $destroy_field + '</div>').children(':last').hide().fadeIn();
+  type_select_action();
+  action_for_destroy();
+});
+$('.loader').fadeOut();
+type_select_action();
+action_for_destroy();
+
