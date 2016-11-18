@@ -1,0 +1,36 @@
+<div class="container" >
+  <div class="col-lg-12" >
+    <div class="panel panel-default" >
+      <div class="panel-heading" >
+        <%= t "tour_rule.list_tour" %>
+      </div>
+      <div class="panel-body" >
+        <table class="table" >
+          <tr>
+            <th><%= t "tour_rule.select" %></th>
+            <th><%= t "view.name_tour" %></th>
+            <th><%= t "view.price_title" %></th>
+            <th><%= t "view.time_tour" %></th>
+            <th><%= t "view.active" %></th>
+          </tr>
+          <% @tours.each do |t| %>
+            <tr>
+              <td><%= check_box_tag :check_rule, t.id %></td>
+              <td><%= t.name %></td>
+              <td><%= number_to_currency(t.price) %></td>
+              <th><%= t.time_tour %> &nbsp <%= t "view.day" %></th>
+              <% if t.publish? %>
+                <th><%= t "view.active_type.publish" %></th>
+              <% else %>
+                <th><%= t "view.active_type.expire" %></th>
+              <% end %>
+            </tr>
+          <% end %>
+          <tr>
+            <%= paginate @tours %>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

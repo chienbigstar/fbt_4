@@ -1,0 +1,22 @@
+$list = '<%= j render "admin/shared/list_place" %>';
+$($list).dialog(
+    {
+      width: 1000,
+      height:500,
+      modal: true,
+      buttons: {
+        "Ok": function () {
+          $value = "";
+          $("input[name=check_rule]:checked").each(function(){
+            $value += $(this).val() + ',';
+          });
+          $name = '<%= name_for_value @time %>';
+          $('input[name="' + $name + '"]').attr('value', $value);
+          $(this).dialog('close').remove();
+        }
+      },
+      close: function(){
+        $(this).dialog('close').remove();
+      }
+    }
+);

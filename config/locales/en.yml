@@ -111,16 +111,6 @@ en:
     rate_tour_avg: "%{avg}/5 (%{vote} vote)"
     rate: "Rate tour: "
     each_hour_rate_avg: "Update each 6 hour"
-    booking_user: "User Booking"
-    tour_name: "Tour Booking"
-    number_member: "Number member(person)"
-    discount: "Discount name"
-    money: "Price of Tour"
-    total_money: "Total money"
-    orderbookingtour: "All order"
-    ordered: "has a order tour:"
-    memeber: "x%{member}(person)"
-    day_order: "Day order: "
   admin:
     categories:
       index:
@@ -245,7 +235,6 @@ en:
     edit_tour: "Edit tour success"
     delete_success: "Delete success!"
     delete_fail: "Delete fail!"
-    booking: "List Booking"
   header:
     categories_manager: Categories
     places_manager: Places
@@ -253,10 +242,6 @@ en:
     action: Action
     view: View
     tour_manager: "Tours"
-    reviews_manager: "Review"
-    profile: "Profile"
-    edit: "Change info"
-    sign_out: "Log out"
   number:
     currency:
       format:
@@ -270,7 +255,6 @@ en:
     tour: Tour
     tour_price: Tour price
     number_member: Number member
-    total_money: "Total money"
     discount_money: Discount Money
     booking_price: Booking price
     place: Place

@@ -21,10 +21,6 @@ class Ability
       end
 
       can [:new, :create], Booking
-      can [:destroy], Booking do |booking|
-        booking.user == user && booking.waiting_pay?
-      end
-
       can :manage, :payment
 
       can [:new, :create], Comment

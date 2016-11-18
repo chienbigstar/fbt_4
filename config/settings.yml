@@ -13,7 +13,6 @@ payment:
   system_error: 4
 limitdepth: 2
 image_tour: 1200x300
-gravatar: 50x50
 default_image_tour: "fire.png"
 rate_min: 0
 rate_max: 5

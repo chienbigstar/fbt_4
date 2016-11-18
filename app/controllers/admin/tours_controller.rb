@@ -6,6 +6,11 @@ class Admin::ToursController < ApplicationController
 
   def index
     @tours = Tour.all.page(params[:page]).per Settings.tour
+    @time = params[:time]
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

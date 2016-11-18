@@ -6,17 +6,20 @@
           <%= image_tag "logo.png" %>
         </a>
       </div>
-
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <%= link_to root_path do %>
-            <h3><%= t "title" %></h3>
-          <% end %>
+          <li>
+            <%= link_to t(:tour), tours_path %>
+          </li>
+          <li>
+            <%= link_to t(:review), "#" %>
+          </li>
+          <li>
+            <%= link_to t(:place), "#" %>
+          </li>
         </ul>
-
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-
             <% if can? :manage, :all %>
               <li>
                 <%= link_to t("header.bookings_manaer"),
@@ -34,33 +37,22 @@
                 <%= link_to t("header.places_manager"),
                   admin_places_path %>
               </li>
-            <% else %>
-              <ul class="nav navbar-nav">
-                <li>
-                  <%= link_to t(:tour), tours_path %>
-                </li>
-
-                <li>
-                  <%= link_to t("controller.booking"), user_orders_path(current_user) %>
-                </li>
-              </ul>
             <% end %>
-
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown">
                 <%= current_user.name %><b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to t("header.profile"),
+                  <%= link_to t("devise.header.profile"), 
                     user_path(current_user) %>
                 </li>
                 <li>
-                  <%= link_to t("header.edit"),
+                  <%= link_to t("devise.header.edit"), 
                     edit_user_registration_path %>
                 </li>
                 <li>
-                  <%= link_to t("header.sign_out"),
+                  <%= link_to t("devise.header.sign_out"), 
                     destroy_user_session_path, method: :delete %>
                 </li>
               </ul>

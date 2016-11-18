@@ -3,6 +3,11 @@ class Admin::PlacesController < ApplicationController
 
   def index
     @places = Place.all.order(created_at: :desc).page params[:page]
+    @time = params[:time]
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

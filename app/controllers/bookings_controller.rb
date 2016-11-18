@@ -15,15 +15,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def destroy
-    if @booking.destroy
-      flash[:success] = t "controller.delete_success"
-    else
-      flash[:danger] = t "controller.delete_fail"
-    end
-    redirect_to user_orders_path current_user
-  end
-
   private
   def booking_params
     params.require(:booking).permit :tour_id, :number_member

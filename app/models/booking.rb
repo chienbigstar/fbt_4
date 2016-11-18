@@ -38,7 +38,6 @@ class Booking < ApplicationRecord
     dates = value.split " -> "
     where("created_at >= ? AND created_at <= ?", dates[0], dates[1])
   }
-  scope :bookings, -> user{where user_id: user.id}
 
   def available_tour
     @tour = Tour.find_by_id tour_id

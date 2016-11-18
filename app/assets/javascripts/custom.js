@@ -66,9 +66,9 @@ $(document).on('turbolinks:load', function() {
 function prepare_rule_data(data){
   $condition_input = get_condition_input(data);
   $text_input = '<input type="text" name=' +
-    name_for_element('$time', 'value') + ' >';
+    name_for_element('$time', 'valued') + ' >';
   $number_input = '<input type="number" name=' +
-    name_for_element('$time', 'value') + ' >';
+    name_for_element('$time', 'valued') + ' >';
   $remove_button = '<i class="bt-remove pt glyphicon glyphicon-remove" ></i>';
   $destroy_input = '<input type="hidden" name=' +
     name_for_element('$time', '_destroy') + ' >';
@@ -80,8 +80,8 @@ function replace_time(content, time){
 
 
 function get_condition_input(data){
-  condition_input = '<select class="rule_select" name=' +
-    name_for_element('$time', 'type') + '>';
+  condition_input = '<select time="$time" class="rule_select" name=' +
+    name_for_element('$time', 'typed') + '>';
   $.each(data.conditions, function(i, val){
     condition_input += '<option value=' + val[1] +' >' + val[0] + '</option>';
   });

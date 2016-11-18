@@ -30,6 +30,11 @@ class Tour < ApplicationRecord
     {content_type: ["image/jpeg", "image/gif", "image/png"]}
   validate :check_start_time, on: [:create]
 
+  scope :price_less, -> price {where("price < ?", price)}
+  scope :price_more, -> price {where("price > ?", price)}
+  scope :by_place, -> ids {where("place_id in (?)", ids)}
+  scope :by_tour, -> ids {where("id in (?)", ids)}
+
   def check_start_time
     if self.start_day < DateTime.now
       errors.add :base, I18n.t("model.year")
