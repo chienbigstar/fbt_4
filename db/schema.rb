@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125031632) do
+ActiveRecord::Schema.define(version: 20161127141519) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -104,6 +104,12 @@ ActiveRecord::Schema.define(version: 20161125031632) do
     t.index ["tour_rule_id"], name: "index_conditions_on_tour_rule_id", using: :btree
   end
 
+  create_table "configurations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "type_rule"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "discounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "percent"
     t.datetime "start_date"
@@ -189,6 +195,17 @@ ActiveRecord::Schema.define(version: 20161125031632) do
     t.string  "name",                       collation: "utf8_bin"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  end
+
+  create_table "tour_rule_prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "tour_rule_id"
+    t.integer  "tour_id"
+    t.date     "day"
+    t.integer  "price"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["tour_id"], name: "index_tour_rule_prices_on_tour_id", using: :btree
+    t.index ["tour_rule_id"], name: "index_tour_rule_prices_on_tour_rule_id", using: :btree
   end
 
   create_table "tour_rules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

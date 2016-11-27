@@ -13,3 +13,4 @@ payment:
 limitdepth: 2
 image_tour: 1200x300
 default_image_tour: "fire.png"
+format_time: "%Y-%M-%D %H:%M:%S"

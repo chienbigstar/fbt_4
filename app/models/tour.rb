@@ -10,6 +10,7 @@ class Tour < ApplicationRecord
   has_many :categories, through: :tours_categories
   has_many :tours_discounts, dependent: :destroy
   has_many :discounts, through: :tours_discounts
+  has_many :tour_rule_prices, dependent: :destroy
 
   belongs_to :place
 
@@ -27,6 +28,10 @@ class Tour < ApplicationRecord
   validates_attachment :image, content_type:
     {content_type: ["image/jpeg", "image/gif", "image/png"]}
   validate :check_start_time, on: [:create]
+
+  scope :price_less, -> price {where("price < ?", price)}
+  scope :price_more, -> price {where("price > ?", price)}
+  scope :place, -> id {where(place_id: id)}
 
   def check_start_time
     if self.start_day < DateTime.now

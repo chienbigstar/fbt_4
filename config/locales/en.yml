@@ -299,3 +299,7 @@ en:
     create_scucess: Created success rule
     update_success: Updated success rule
     destroy_success: Delete success rule
+  promotion:
+    promotion: Promotion
+    tour_rule: Tour rule
+
