@@ -63,7 +63,7 @@ class Booking < ApplicationRecord
     def options_for_sorted_by
       [
         [I18n.t("admin.bookings.created_at_desc"), "created_at desc"],
-        [I18n.t("admin.bookings.created_at_desc"), "created_at asc"],
+        [I18n.t("admin.bookings.created_at_asc"), "created_at asc"],
       ]
     end
 

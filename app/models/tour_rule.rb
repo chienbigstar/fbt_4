@@ -54,4 +54,18 @@ class TourRule < ApplicationRecord
     end
     result
   end
+
+  class << self
+    def generate_final_price
+      TourFinalPrice.delete_all
+      min_rule_price = TourRulePrice.select("id, tour_id, MIN(price) as price").group :tour_id
+      params = []
+      min_rule_price.to_a.each_with_index{|value, index|
+        param = value.attributes
+        param[:tour_rule_price_id] = param.delete "id"
+        params.push(param)
+      }
+      TourFinalPrice.create params
+    end
+  end
 end

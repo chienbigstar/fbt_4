@@ -339,3 +339,9 @@ en:
     sort: "Sort"
     and: "And"
     buttom: "Search"
+    apply_rule: Apply rule
+    apply_success: Apply success
+    apply_not_success: Apply not success
+  promotion:
+    promotion: Promotion
+    tour_rule: Tour rule price

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :tours
     resources :tour_rules, except: :show
     resources :users, only: [:index, :destroy]
+    resources :final_prices, only: :index
   end
   resources :tours, only: [:index, :show] do
     resources :reviews

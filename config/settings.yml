@@ -19,3 +19,4 @@ rate_min: 0
 rate_max: 5
 roud_rate: 1
 limit_category: 10
+format_date: "%Y%m%d"
