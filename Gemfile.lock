@@ -93,6 +93,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
+   pg (0.19.0)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
@@ -195,6 +196,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
+  pg (~> 0.18)
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
   puma (~> 3.0)
