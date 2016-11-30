@@ -31,6 +31,7 @@ gem "whenever", require: false
 gem "public_activity"
 gem "friendly_id","~> 5.1.0"
 gem "paranoia", "~> 2.2.0.pre"
+gem "jquery-ui-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri

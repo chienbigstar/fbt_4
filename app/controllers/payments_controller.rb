@@ -8,6 +8,7 @@ class PaymentsController < ApplicationController
       @book.public_token = Booking.new_token
       data = data_payment @book
       respond = get_api_call Settings.order_bank_url, data
+
       @status = Settings.payment.system_error unless respond
     else
       @status = Settings.payment.booking_not_found
