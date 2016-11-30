@@ -16,7 +16,7 @@ gem "kaminari"
 gem "cancancan", "~> 1.10"
 gem "bootstrap-kaminari-views"
 gem "config"
-gem 'pg'
+gem 'pg', '~> 0.18'
 
 group :development, :test do
   gem "byebug", platform: :mri
