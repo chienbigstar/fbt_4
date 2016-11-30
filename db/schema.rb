@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127131321) do
+ActiveRecord::Schema.define(version: 20161130010217) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20161127131321) do
 
   create_table "conditions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "tour_rule_id"
-    t.string   "condition_type"
+    t.integer  "condition_type"
     t.string   "condition_value"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -204,6 +204,16 @@ ActiveRecord::Schema.define(version: 20161127131321) do
     t.string  "name",                       collation: "utf8_bin"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  end
+
+  create_table "tour_final_prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "tour_id"
+    t.integer  "tour_rule_price_id"
+    t.integer  "price"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["tour_id"], name: "index_tour_final_prices_on_tour_id", using: :btree
+    t.index ["tour_rule_price_id"], name: "index_tour_final_prices_on_tour_rule_price_id", using: :btree
   end
 
   create_table "tour_rule_prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

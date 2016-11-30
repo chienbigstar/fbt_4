@@ -330,3 +330,9 @@ en:
     price_more: price more
     place: place(separate by comma)
     tour: tour(separate by comma)
+    apply_rule: Apply rule
+    apply_success: Apply success
+    apply_not_success: Apply not success
+  promotion:
+    promotion: Promotion
+    tour_rule: Tour rule price

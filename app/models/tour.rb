@@ -12,6 +12,7 @@ class Tour < ApplicationRecord
   has_many :categories, through: :tours_categories
   has_many :tours_discounts, dependent: :destroy
   has_many :discounts, through: :tours_discounts
+  has_one :tour_final_price, dependent: :destroy
 
   belongs_to :place
 

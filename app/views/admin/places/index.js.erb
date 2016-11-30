@@ -21,7 +21,7 @@ function dialog_element(element){
             $value += $(this).val() + ',';
           });
           $name = '<%= name_for_value @time %>';
-          $('input[name="' + $name + '"]').attr('value', $value);
+          $('input[name="' + $name + '"]').attr('value', $value).val($value);
           $list_dialog = [];
           $('.dialog').remove();
         }
