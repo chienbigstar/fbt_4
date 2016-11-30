@@ -34,6 +34,7 @@ gem "paranoia", "~> 2.2.0.pre"
 
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "pg"
 end
 
 group :development do
@@ -41,6 +42,7 @@ group :development do
   gem "listen", "~> 3.0.5"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "pg"
 end
-
+gem "pg"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
