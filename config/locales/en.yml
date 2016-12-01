@@ -330,3 +330,12 @@ en:
     price_more: price more
     place: place(separate by comma)
     tour: tour(separate by comma)
+  search:
+    tour_name: "Tour Name"
+    min: "Minumum Price"
+    max: "Maximum Price"
+    time_tour: "Time Tour (day)"
+    to: "To"
+    sort: "Sort"
+    and: "And"
+    buttom: "Search"

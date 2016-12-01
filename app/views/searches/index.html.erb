@@ -1,6 +1,55 @@
 <div class="container">
-  <div class="row">
-    <div class="container-fluid">
+  <div class="col-md-12 col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="container-fluid">
+          <%= search_form_for @search, class: "form-inline" do |f| %>
+            <div class="large-3 small-4 columns">
+              <%= f.label :name_cont, t(".search.tour_name") %>
+              <%= f.text_field :name_cont, class: "large-3 small-4 columns", 
+                placeholder: t("search.tour_name") %><br>
+            </div>
+            <div class="col-sm-6">
+                <%= f.label :price_gteq, class: "movie-label" %>
+                <%= f.text_field :price_gteq, class: "radius", 
+                  placeholder: t("search.min") %>
+            </div>
+            <div class="col-sm-1"><span><%= t "search.and" %></span></div>
+            <div class="col-sm-5">
+              <%= f.label :price_lteq, class: "movie-label" %>
+              <%= f.text_field :price_lteq, class: "radius", 
+                placeholder: t("search.max") %>
+            </div>
+            <div class="form-group">
+              <%= f.label :time_tour_eq, 'Time tour:' %>
+              <%= f.text_field :time_tour_eq, class: "large-3 small-4 columns"
+                ,placeholder: t("search.time_tour") %><br>
+            </div> 
+              <div class="input-daterange">
+                <div class="col-md-4">
+                  <%= f.label :start_day_gteq, 'Start day:' %>
+                  <%= f.date_field :start_day_gteq, 
+                    class: "large-3 small-4 columns" %>
+                </div>
+                <div class="col-sm-1"><span><%= t "search.to" %></span></div>
+                <div class="col-md-3 col-md-offset-1">
+                  <%= f.date_field :start_day_lteq, 
+                    class: "large-3 small-4 columns" %>
+                </div>
+              <h5><%= t "search.sort" %></h5>
+              <div class="column">
+                <%= f.sort_fields do |s| %>
+                  <%= s.sort_select %>
+                <% end %>
+              </div>
+            </div>
+            <%= f.submit t("search.buttom"), class: "btn btn-default" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>     
+    <div class="row">
       <div class="row">
         <div class="col-md-12">
           <div class="col-md-10 col-sm-9">
@@ -37,6 +86,7 @@
               </div>
             <% end %>
           </div>
+          <%= paginate @tours, theme: "twitter-bootstrap-3" %>
         </div>
       </div>
     </div>
