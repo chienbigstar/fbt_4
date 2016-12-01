@@ -17,7 +17,7 @@
 //= require ckeditor/init
 //= require bootstrap-sprockets
 //= require jquery.raty
-//= require ratyrate
+//= require ratyrate.js.erb
 //= require filterrific/filterrific-jquery
 //= require moment
 //= require daterangepicker
