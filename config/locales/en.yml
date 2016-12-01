@@ -78,7 +78,7 @@ en:
     start_date: "Start day: "
     end_date: "End day: "
     tour: "Tour"
-    price: "%{price} $"
+    price: "%{price}"
     label_price: "Price: "
     new_tour: "Add New Tour"
     stt: "STT"
@@ -88,7 +88,7 @@ en:
     active: "Status active"
     action: "Action"
     confirm: "Are you delete ?"
-    day: "Day"
+    day: "Days"
     placeholder_time_tour: "Let's add Time tour (unit day)"
     placeholder_name: "Example: Visit to Viet Nam"
     placeholder_price: "999"
@@ -274,28 +274,17 @@ en:
         precision: 0
   view_booking:
     user: User
-    tour: Tour
-    tour_price: Tour price
-    number_member: Number member
-    total_money: "Total money"
-    discount_money: Discount Money
+    tour: Tour name
+    origin_price: Origin price
     booking_price: Booking price
+    number_member: Number member
+    total_money: Total money
     place: Place
-    start_place: Start place
-    time_tour: Start place
+    time_tour: Time tour
     start_day: Start day
-    schedule: Schedule
     status: Status
   model:
     year: "You must add time present or future!"
-  number:
-    currency:
-      format:
-        unit: ""
-        delimiter: ','
-        separator: '.'
-        precision: 0
-        format: '%u%n'
   time:
     formats:
       short: "%d-%m-%G (%H hour %M minute)"
@@ -336,3 +325,4 @@ en:
   promotion:
     promotion: Promotion
     tour_rule: Tour rule price
+  nan: NAN

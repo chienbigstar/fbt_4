@@ -1,18 +1,19 @@
 <footer>
-  <div class="clr"><hr /></div>
-  <div class="wrap-footer">
+  <div id="sub-footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-6">
           <div class="copyright">
-            <%= t "copyright" %>
+            <p>
+              <%= t "copyright" %>
+            </p>
           </div>
         </div>
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
+        <div class="col-lg-6">
+          <ul class="social-network">
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-twitter"></i>
+                  <i class="fa fa-twitter"></i>
               <% end %>
             </li>
             <li>
@@ -25,10 +26,6 @@
                   <i class="fa fa-linkedin"></i>
               <% end %>
             </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
             <li>
               <%= link_to t(:contact), page_path(page: :contact) %>
             </li>

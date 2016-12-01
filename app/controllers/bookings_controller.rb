@@ -26,7 +26,8 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.require(:booking).permit :tour_id, :number_member
+    params.require(:booking).permit :tour_id, :number_member, :contact_email,
+      :phone_number
   end
 
   def find_tour

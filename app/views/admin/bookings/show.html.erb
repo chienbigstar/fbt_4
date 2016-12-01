@@ -14,7 +14,7 @@
         <div class="col-md-9">
           <ul class="list-group">
             <li class="list-group-item ">
-              <%= @booking.user.email %>
+              <%= @booking.user.name %>
             </li>
             <li class="list-group-item ">
               <%= @booking.tour.name %>
@@ -23,10 +23,11 @@
               <%= number_to_currency @booking.tour.price %>
             </li>
             <li class="list-group-item ">
-              <%= @booking.number_member %>
+              <%= (final_price = @booking.tour.tour_final_price.price) ?
+                number_to_currency(final_price) : t(:nan) %>
             </li>
             <li class="list-group-item ">
-              <%= number_to_currency @booking.discount_money %>
+              <%= @booking.number_member %>
             </li>
             <li class="list-group-item ">
               <%= number_to_currency @booking.total_money %>
@@ -35,13 +36,10 @@
               <%= @booking.tour.place.name %>
             </li>
             <li class="list-group-item ">
-              <%= @booking.tour.time_tour %>
+              <%= @booking.tour.time_tour %> <%= t("view.day") %>
             </li>
             <li class="list-group-item ">
               <%= @booking.tour.start_day %>
-            </li>
-            <li class="list-group-item ">
-              <%= @booking.tour.schedule %>
             </li>
             <li class="list-group-item ">
               <% if is_change_status @booking  %>

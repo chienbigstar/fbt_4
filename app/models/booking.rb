@@ -14,7 +14,13 @@ class Booking < ApplicationRecord
   
   validates :tour_id, presence: true, format: {with: /\A[1-9]/i}
   validates :number_member, presence: true, format: {with: /\A[1-9]/i}
-  validate :available_tour
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :contact_email, presence: true, length: {maximum: 255},
+    format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
+  VALID_PHONE_NUMBER_REGEX = /\A0[0-9]/i
+  validates :phone_number, presence: true, length: {minimum: 10, maximum: 11},
+    format: {with: VALID_PHONE_NUMBER_REGEX}
+  validate :available_tour, if: Proc.new{number_member.present?}
 
   filterrific(
     default_filter_params: {
@@ -43,7 +49,8 @@ class Booking < ApplicationRecord
   def available_tour
     @tour = Tour.find_by_id tour_id
     if @tour
-      self.total_money = number_member * @tour.price
+      self.total_money = @tour.tour_final_price ?
+        number_member * @tour.tour_final_price.price : number_member * @tour.price
       self.payment_token = Booking.new_token
     else
       errors.add :base, I18n.t("tours.invalid_tour")

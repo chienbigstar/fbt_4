@@ -1,5 +1,9 @@
 <div class="col-md-9 col-sm-9">
-  <h3><strong><%= link_to t("tours.index.list"), tours_path %></strong></h3>
+  <h3>
+    <div class="cbp-l-loadMore-button">
+      <%= link_to t("tours.index.list"), tours_path, class: "cbp-l-loadMore-button-link" %>
+    </div>
+  </h3>
   <% @tours.each do |tour| %>
     <div class="row div-a-tour">
       <div class="col-md-3">

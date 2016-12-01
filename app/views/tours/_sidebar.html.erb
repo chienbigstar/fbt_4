@@ -1,12 +1,21 @@
-<div class="col-md-3 col-sm-3 sidebar">
-  <div class="title"><%= t "tours.index.category" %></div>
-  <div>
-    <% @supports.categories.each do |category| %>
-      <%= link_to tag_path(category.name),
-        class: "tag category" do %>
-        <%= category.name %>(<%= category.taggings_count %>)
+<aside class="left-sidebar">
+  <div class="widget">
+    <h5 class="widgetheading"><%= t "tours.index.category" %></h5>
+    <ul class="cat">
+      <% @supports.categories.each do |category| %>
+        <li><i class="fa fa-angle-right"></i>
+          <%= link_to tag_path(category.name) do %>
+            <%= category.name %>
+          <% end %>
+          <span>(<%= category.taggings_count %>)</span>
+        </li>
       <% end %>
-    <% end %>
-    <%= link_to t("view.see_more"), categories_path %>
+      <div>
+        <%= link_to categories_path, class: "readmore pull-left" do %>
+          <%= t "view.see_more" %>
+          <i class="fa fa-angle-right"></i>
+        <% end %>
+      </div>
+    </ul>
   </div>
-</div>
+</aside>

@@ -21,3 +21,4 @@
 //= require filterrific/filterrific-jquery
 //= require moment
 //= require daterangepicker
+//= require jquery-ui

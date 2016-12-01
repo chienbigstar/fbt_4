@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css";
+@import "//drive.google.com/uc?export=download&id=0B_xRcfdRF8xAemxRcjFMZXJzalk";
+@import "//drive.google.com/uc?export=download&id=0B_xRcfdRF8xATmRaX1EzcXJJVzg";
 
 .custom-div-text{
   word-wrap: break-word;
@@ -395,3 +397,42 @@ img.raty-cancel{
 }
 .category-all{
 }
+.old{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.square-hot{
+  border: 1px solid #e6e6e6;
+  background: #fcfcfc;
+  text-align: center;
+  padding: 40px 0 0px 0;
+  display: block;
+}
+.ui-dialog .ui-dialog-content
+{
+  position: relative;
+  border: 0;
+  padding: .5em 1em;
+  background: none;
+  overflow: auto;
+  zoom: 1;
+  background-color: #ffd;
+  border: solid 1px #ea7;
+}
+
+.ui-dialog .ui-dialog-titlebar
+{
+  background: none;
+  border: none;
+}
+
+.ui-widget-content
+{
+  border:none;
+}
+
+.contains{
+  width: 100%;
+  margin-left: 100px;
+}
+

@@ -10,6 +10,8 @@ class CreateBookings < ActiveRecord::Migration[5.0]
       t.string :payment_token
       t.integer :status, default: 0
       t.integer :discount_money
+      t.string :contact_email
+      t.string :phone_number
 
       t.timestamps
     end

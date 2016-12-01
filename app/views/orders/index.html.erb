@@ -18,12 +18,12 @@
           <%= link_to booking.tour.name, booking.tour %>
         </div>
         <div class="row">
-          <div class="price">
-            <%= t "view.price_title" %>
-            <%= t "view.price", price: number_to_currency(booking.total_money) %>
-          </div>
           <div class="discount">
-            <%= t "view.price", price: number_to_currency(booking.discount_money) %>
+            <%= t "view.price_title" %>
+            <%= t "view.price", price: number_to_currency(booking.tour.price) %>
+          </div>
+          <div class="price">
+            <%= t "view.price", price: number_to_currency(booking.tour.tour_final_price.price) %>
           </div>
           <div class="memeber">
             <%= t "view.memeber", member: booking.number_member %>
